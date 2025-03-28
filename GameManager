@@ -1,0 +1,15 @@
+import android.content.Context
+import android.graphics.BitmapFactory
+import com.example.myapplic.Opponent //Измените имя пакета на ваше
+
+
+class GameManager(private val context: Context) {
+
+    fun createOpponent(x: Float, y: Float, speed: Float): Opponent {
+        // Загрузите пользовательское изображение
+        val customBitmap = BitmapFactory.decodeResource(context.resources, R.drawable.token_red_emovebg)
+
+        // Создайте объект противника с загруженным пользовательским изображением
+        return Opponent(x, y, speed, customBitmap)
+    }
+}
